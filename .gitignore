@@ -1,0 +1,19 @@
+# Environnement Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Modèle MediaPipe (≈8 Mo, retéléchargé automatiquement par vision.py)
+hand_landmarker.task
+*.part
+
+# Fichiers générés par le jeu
+sons/
+record.txt
+
+# Éditeurs et système
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
