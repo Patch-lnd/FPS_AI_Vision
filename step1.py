@@ -25,11 +25,11 @@ floor = Entity(
 #Axes : x = right, y =  up,  z = foward (into screen).
 # collider = 'box' gives the cube an invisble hitbox so the mous can detect it. Without a collider, clicks go straight through. 
 
-aim = Entity(
+target = Entity(
     model ='cube',
-    color = 'color.orange',
+    color = color.orange,
     position = (0,2,10), # 2 units high, 10 units in front of us 
-    collser = 'box',
+    collider = 'box',
 )
 
 # CAMERA 
@@ -43,19 +43,19 @@ camera.position = (0,2,-5)
 def update():
     #time.dt : seconds elapsed since the previous frame. 
     # Multiplying a speed by time.dy makes movement frame-rate
-    aim.rotation_y += 60 * time.dt
+    target.rotation_y += 60 * time.dt
 
     #time.time() : current time in seconds, always increasing. 
     #sin() :  osscilates between -1 and 1, so x swings between -3 and 3.
-    aim.x = math.sin(time.time()) * 3
+    target.x = math.sin(time.time()) * 3
 
 # INPUT HANDLING
 # Ursina calls input(key) once each time a key or mouse button is pressed. 'key' is a string like 'a', 'space', 'left mouse down'.
 
-def inpt(key):
+def input(key):
     #mouse.hovered_entity : the Entity under the cursor. Only works for Entities having a collider.
-    if key == 'left mouse down' and mouse.hovered_entity == aim:
-        aim.color = color.random_color() #Visual feedback on hit.
+    if key == 'left mouse down' and mouse.hovered_entity == target:
+        target.color = color.random_color() #Visual feedback on hit.
 
 # START THE ENGINE : opens the window an runs the game loop until the window is closed. 
 app.run()
