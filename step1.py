@@ -14,10 +14,10 @@ app = Ursina()
 # texture_scale : how many time ste texture repeats on eac axis 
 
 floor = Entity(
-    model, 'plane',
+    model = 'plane',
     scale = 50,
     color = color.dark_gray,
-    texture = 'white_cube'
+    texture = 'white_cube',
     texture_scale = (50,50),
 )
 
@@ -27,7 +27,7 @@ floor = Entity(
 
 aim = Entity(
     model ='cube',
-    color = 'color.orange'
+    color = 'color.orange',
     position = (0,2,10), # 2 units high, 10 units in front of us 
     collser = 'box',
 )
